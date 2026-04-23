@@ -1,0 +1,102 @@
+.lifestyle-dining {
+  background: linear-gradient(to bottom, #0a0a0a, #111);
+  overflow: hidden;
+}
+
+.dining-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.lifestyle-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.lifestyle-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+.stat-desc {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.dining-visuals {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 1rem;
+}
+
+.lifestyle-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.lifestyle-card:hover {
+  transform: scale(1.02);
+}
+
+.l-1 {
+  grid-row: span 2;
+  background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1000');
+}
+
+.l-2 {
+  background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1000');
+}
+
+.l-3 {
+  background-image: url('https://images.unsplash.com/photo-1550966842-28c460016370?auto=format&fit=crop&q=80&w=1000');
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.card-overlay h4 {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+.ambient-bg-glow {
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  width: 40%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(201, 166, 107, 0.1) 0%, transparent 70%);
+  filter: blur(50px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .dining-grid {
+    grid-template-columns: 1fr;
+  }
+}
