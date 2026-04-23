@@ -47,7 +47,8 @@ const Attractions = ({ onInquiry }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="visual-inner">
-            <img src="/assets/dubai_aquarium_cinematic_1776958115865.png" alt="Dubai Aquarium" className="visual-img" />
+            <img src="assets/dubai_aquarium_cinematic_1776958115865.png" alt="Dubai Aquarium" className="visual-img" />
+
             <div className="visual-overlay">
               <p className="graphic-label">World-Class Entertainment</p>
             </div>

@@ -76,7 +76,8 @@ const EventsModule = ({ onInquiry }) => {
 
                     </div>
                     <div className="modal-col">
-                      <img src="/assets/mall_entertainment_event_1776928097011.png" alt="Grand Atrium Event" className="modal-img" />
+                      <img src="assets/mall_entertainment_event_1776928097011.png" alt="Grand Atrium Event" className="modal-img" />
+
                     </div>
 
 
@@ -98,7 +99,8 @@ const EventsModule = ({ onInquiry }) => {
 
                     </div>
                     <div className="modal-col">
-                      <img src="/assets/fashion_avenue_dubai_mall_luxury_1776958221526.png" alt="Brand Activations" className="modal-img" />
+                      <img src="assets/fashion_avenue_dubai_mall_luxury_1776958221526.png" alt="Brand Activations" className="modal-img" />
+
                     </div>
 
                   </div>

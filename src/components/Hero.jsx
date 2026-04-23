@@ -14,7 +14,8 @@ const Hero = () => {
           loop 
           muted 
           playsInline
-          poster="/assets/dubai_mall_hero_1776928007760.png"
+          poster="assets/dubai_mall_hero_1776928007760.png"
+
         >
           {/* A luxury architectural placeholder video. Fallbacks to the AI poster if blocked by browser adblock. */}
           <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-city-architecture-at-night-4286-large.mp4" type="video/mp4" />
