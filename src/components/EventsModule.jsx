@@ -20,8 +20,9 @@ const EventsModule = ({ onInquiry }) => {
 
       <div className="events-preview-grid">
         <div className="event-card glass-panel" onClick={() => setActiveModal('concerts')}>
-          <div className="event-card-img" style={{backgroundImage: 'url(/assets/mall_entertainment_event_1776928097011.png)'}}></div>
+          <div className="event-card-img" style={{backgroundImage: `url(${import.meta.env.BASE_URL}assets/mall_entertainment_event_1776928097011.png)`}}></div>
           <div className="event-card-content">
+
             <h3>Concerts & Performances</h3>
             <p>Access massive indoor and outdoor venues capable of hosting tens of thousands.</p>
             <span className="read-more">View Specs <ArrowRight size={16} /></span>
@@ -29,8 +30,9 @@ const EventsModule = ({ onInquiry }) => {
         </div>
 
         <div className="event-card glass-panel" onClick={() => setActiveModal('activations')}>
-          <div className="event-card-img activation-bg"></div>
+          <div className="event-card-img activation-bg" style={{backgroundImage: `url(${import.meta.env.BASE_URL}assets/fashion_avenue_dubai_mall_luxury_1776958221526.png)`}}></div>
           <div className="event-card-content">
+
             <h3>Brand Activations</h3>
             <p>High-traffic atrium zones perfect for 360-degree brand takeovers.</p>
             <span className="read-more">Explore Tiers <ArrowRight size={16} /></span>
