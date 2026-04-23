@@ -14,7 +14,8 @@ const Hero = () => {
           loop 
           muted 
           playsInline
-          poster="assets/dubai_mall_hero_1776928007760.png"
+          poster={`${import.meta.env.BASE_URL}assets/dubai_mall_hero_1776928007760.png`}
+
 
         >
           {/* A luxury architectural placeholder video. Fallbacks to the AI poster if blocked by browser adblock. */}

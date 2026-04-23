@@ -49,7 +49,8 @@ const WhyProperty = ({ onInquiry }) => {
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
         >
           <div className="visual-inner">
-            <img src="assets/luxury_mall_interior_cinematic_1776957820844.png" alt="Dubai Mall Hub" className="visual-img" />
+            <img src={`${import.meta.env.BASE_URL}assets/luxury_mall_interior_cinematic_1776957820844.png`} alt="Dubai Mall Hub" className="visual-img" />
+
 
             <div className="visual-overlay">
               <p className="graphic-label">Downtown Dubai Hub</p>

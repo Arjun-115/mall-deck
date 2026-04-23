@@ -30,7 +30,8 @@ const RetailLuxury = ({ onInquiry }) => {
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <img src="assets/fashion_avenue_dubai_mall_luxury_1776958221526.png" alt="Luxury Fashion Avenue" className="showcase-img" />
+          <img src={`${import.meta.env.BASE_URL}assets/fashion_avenue_dubai_mall_luxury_1776958221526.png`} alt="Luxury Fashion Avenue" className="showcase-img" />
+
 
           <div className="showcase-caption glass-panel">
             <h4>Flagship Opportunities</h4>
