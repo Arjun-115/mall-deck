@@ -1,0 +1,131 @@
+.retail-zone {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+/* Hero */
+.retail-hero {
+  position: relative;
+  overflow: hidden;
+}
+.retail-hero-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  transition: transform 8s ease;
+}
+.retail-zone:hover .retail-hero-img { transform: scale(1.1); }
+.retail-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(5,5,8,0.6) 0%, rgba(5,5,8,0.2) 60%, rgba(5,5,8,0.5) 100%);
+}
+.retail-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem;
+  animation: fadeUp 0.7s ease both;
+}
+.retail-hero-title {
+  color: var(--white);
+  font-size: clamp(1.6rem, 3vw, 3rem);
+  margin: 0.75rem 0 1.5rem;
+  line-height: 1.15;
+}
+.retail-hero-title em { color: var(--gold); }
+
+.retail-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.stat-big {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+.stat-lbl {
+  display: block;
+  font-size: 0.55rem;
+  color: var(--gold);
+  margin-top: 0.25rem;
+}
+.divider-v {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* Tiers panel */
+.retail-tiers {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  background: rgba(5,5,8,0.4);
+  animation: slideInRight 0.6s ease both;
+}
+.retail-tiers-header { margin-bottom: 0.5rem; }
+
+.retail-tiers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.retail-tier-card {
+  padding: 1.25rem;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid var(--glass-border);
+  transition: border-color 0.3s ease, background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.retail-tier-card.active {
+  border-color: rgba(201,168,76,0.3);
+  background: rgba(201,168,76,0.04);
+}
+.rtc-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+.rtc-icon { font-size: 1rem; }
+.rtc-label { font-size: 0.55rem; }
+.rtc-desc { font-size: 0.75rem; line-height: 1.5; }
+.rtc-detail {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--glass-border);
+  animation: fadeUp 0.3s ease both;
+}
+.rtc-meta { display: flex; flex-direction: column; gap: 0.1rem; margin-bottom: 0.5rem; }
+.rtc-meta .label-sm { font-size: 0.5rem; margin-bottom: 0.1rem; }
+.rtc-meta .body-md { font-size: 0.75rem; color: var(--white); }
+.rtc-brands { font-size: 0.65rem; letter-spacing: 0.05em; margin-top: 0.4rem; }
+.rtc-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.retail-tier-card:hover .rtc-bar,
+.retail-tier-card.active .rtc-bar { opacity: 1; }

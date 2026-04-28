@@ -1,0 +1,179 @@
+.scale-zone {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  overflow: hidden;
+}
+
+/* LEFT */
+.scale-left {
+  padding: 3rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--glass-border);
+  background: rgba(5,5,8,0.3);
+  overflow-y: auto;
+}
+
+.scale-header { margin-bottom: 1.5rem; animation: fadeUp 0.6s ease both; }
+.scale-title {
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 1;
+  margin: 0.25rem 0;
+}
+.counter-gold { color: var(--gold); }
+
+/* World map */
+.pulse-map-wrap {
+  flex: 1;
+  min-height: 180px;
+  position: relative;
+  animation: fadeIn 0.8s 0.3s ease both;
+}
+.pulse-map {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(74,158,255,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  background: rgba(10,16,32,0.6);
+}
+.pulse-svg {
+  width: 100%;
+  height: 100%;
+}
+.pulse-dot {
+  animation: pulseDot 2s var(--delay, 0s) ease-in-out infinite;
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 0.5; r: 0.7; }
+  50% { opacity: 1; r: 1; }
+}
+.pulse-ring {
+  animation: pulseRingAnim 2.5s 0.5s ease-out infinite;
+  transform-origin: 64% 36%;
+}
+@keyframes pulseRingAnim {
+  0% { r: 2; opacity: 0.6; }
+  100% { r: 5; opacity: 0; }
+}
+.map-label {
+  position: absolute;
+  transform: translate(-50%, -180%);
+  font-family: var(--font-label);
+  font-size: 0.45rem;
+  letter-spacing: 0.1em;
+  color: rgba(74,158,255,0.6);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.map-label-gold { color: var(--gold) !important; font-weight: 700; }
+
+/* Live ticker */
+.live-ticker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(74,158,255,0.05);
+  border: 1px solid rgba(74,158,255,0.1);
+  animation: fadeUp 0.7s 0.5s ease both;
+  flex-wrap: wrap;
+}
+.live-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #4A9EFF;
+  box-shadow: 0 0 6px #4A9EFF;
+  animation: blink 1.2s ease infinite;
+  flex-shrink: 0;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.live-num {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4A9EFF;
+}
+
+/* RIGHT */
+.scale-right {
+  padding: 2.5rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+  animation: slideInRight 0.6s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.scale-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+.scale-stats .stat-card {
+  animation: fadeUp 0.5s ease both;
+}
+
+/* Calculator panel */
+.calc-panel {
+  padding: 1.5rem;
+  border-radius: 2px;
+  border-left: 2px solid var(--gold);
+}
+.calc-selects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.calc-select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.calc-select-group label { font-size: 0.55rem; }
+.calc-select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--white);
+  padding: 0.6rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(201,168,76,0.6)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+}
+.calc-select:focus { border-color: var(--gold); }
+.calc-select option { background: #0A0A12; }
+.calc-btn { font-size: 0.65rem; letter-spacing: 0.2em; margin-top: 0.25rem; }
+
+.calc-result {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  animation: fadeUp 0.5s ease both;
+}
+.calc-result-label { margin-bottom: 0.5rem; font-size: 0.55rem; }
+.calc-big-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: var(--gold);
+  display: block;
+  line-height: 1.1;
+}
+.calc-result-sub { font-size: 0.78rem; margin-top: 0.4rem; }

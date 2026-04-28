@@ -1,0 +1,181 @@
+.sponsor-zone {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  overflow: hidden;
+}
+
+/* LEFT */
+.sponsor-left { position: relative; overflow: hidden; }
+.sponsor-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.06);
+  transition: transform 8s ease;
+}
+.sponsor-zone:hover .sponsor-bg { transform: scale(1.1); }
+.sponsor-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(5,5,8,0.65) 0%, rgba(20,5,40,0.35) 50%, rgba(5,5,8,0.85) 100%);
+}
+.sponsor-left-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem;
+  animation: fadeUp 0.7s ease both;
+}
+.sponsor-title {
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  margin: 0.75rem 0 1rem;
+  color: var(--white);
+  line-height: 1.15;
+}
+.sponsor-title em { color: var(--zone-sponsorship, #FF4D7D); }
+
+.sponsor-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.sponsor-why-item {
+  padding: 0.75rem;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.sponsor-why-icon { font-size: 1rem; }
+.sponsor-why-val {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+
+/* RIGHT */
+.sponsor-right {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+  background: rgba(5,5,8,0.5);
+  animation: slideInRight 0.6s ease both;
+}
+.sponsor-right-header { flex-shrink: 0; }
+
+/* Tier selector */
+.tier-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+.tier-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.75rem 0.5rem;
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  color: rgba(216,216,216,0.5);
+  transition: all 0.25s ease;
+  border-radius: 1px;
+}
+.tier-btn:hover { border-color: rgba(255,255,255,0.2); color: var(--white); }
+.tier-btn.active {
+  border-color: var(--tier-color, var(--gold));
+  background: rgba(255,255,255,0.03);
+}
+.tier-badge {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #050508;
+  font-family: var(--font-label);
+  font-size: 0.38rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  white-space: nowrap;
+}
+.tier-btn-icon { font-size: 1rem; }
+.tier-btn-name { font-size: 0.52rem; }
+.tier-btn-price {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(216,216,216,0.7);
+}
+
+/* Detail */
+.tier-detail {
+  flex: 1;
+  padding: 1.25rem;
+  border-radius: 2px;
+  border: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: fadeUp 0.35s ease both;
+  overflow-y: auto;
+}
+.tier-detail-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.tier-detail-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.tier-tagline { font-size: 0.78rem; opacity: 0.6; }
+.tier-reach-box {
+  border: 1px solid;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  flex-shrink: 0;
+  border-radius: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.tier-reach-val {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 900;
+  display: block;
+}
+
+.tier-includes { display: flex; flex-direction: column; gap: 0.35rem; }
+.tier-include-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.tier-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--glass-border);
+}
+.tier-actions .btn { font-size: 0.58rem; }

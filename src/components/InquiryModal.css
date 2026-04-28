@@ -1,85 +1,119 @@
-.inquiry-backdrop {
+.iq-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
-  backdrop-filter: blur(10px);
+  background: rgba(2, 2, 4, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   z-index: 20000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease both;
 }
 
-.inquiry-card {
-  width: 100%;
-  max-width: 500px;
-  padding: 3rem;
+.iq-panel {
   position: relative;
-  border-radius: 8px;
-}
-
-.close-inquiry {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: transparent;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  opacity: 0.5;
-  transition: opacity 0.3s;
-}
-
-.close-inquiry:hover {
-  opacity: 1;
-}
-
-.inquiry-subtitle {
-  color: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.7rem;
-  margin-top: 5px;
-  margin-bottom: 2rem;
-}
-
-.inquiry-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form-group label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--text-muted);
-}
-
-.form-group input, .form-group textarea {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 12px;
-  color: #fff;
-  font-family: var(--font-sans);
-  border-radius: 4px;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.form-group input:focus, .form-group textarea:focus {
-  border-color: var(--primary);
-}
-
-.w-full {
   width: 100%;
+  max-width: 620px;
+  background: #080810;
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 2.5rem;
+  animation: fadeUp 0.4s cubic-bezier(0.22,1,0.36,1) both;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.iq-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(216,216,216,0.5);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 0.65rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
+}
+.iq-close:hover { border-color: var(--gold); color: var(--gold); }
+
+.iq-header { margin-bottom: 1.75rem; }
+.iq-title {
+  font-size: 1.8rem;
+  color: var(--white);
+  margin: 0.5rem 0 0.4rem;
+  font-style: normal;
+}
+.iq-sub { font-size: 0.82rem; opacity: 0.6; }
+
+/* Form */
+.iq-form { display: flex; flex-direction: column; gap: 1rem; }
+.iq-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.iq-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.iq-field label { font-size: 0.55rem; }
+
+.iq-input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white);
+  padding: 0.75rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  width: 100%;
+}
+.iq-input:focus { border-color: var(--gold); }
+.iq-input::placeholder { color: rgba(216,216,216,0.3); }
+.iq-select {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(201,168,76,0.6)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2rem;
+}
+.iq-select option { background: #080810; }
+.iq-textarea { resize: vertical; min-height: 80px; }
+
+.iq-submit {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  padding: 1rem 2rem;
+  margin-top: 0.25rem;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Success */
+.iq-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  animation: fadeUp 0.5s ease both;
+}
+.iq-success-icon {
+  font-size: 2.5rem;
+  color: var(--gold);
+  animation: float 2s ease infinite;
+}
+
+/* Corner */
+.iq-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-bottom: 1px solid rgba(201,168,76,0.25);
+  border-right: 1px solid rgba(201,168,76,0.25);
+  pointer-events: none;
 }

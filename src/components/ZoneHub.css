@@ -1,0 +1,164 @@
+.hub-root {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 3rem 1.5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.hub-header {
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both;
+}
+.hub-eyebrow {
+  margin-bottom: 0.75rem;
+  opacity: 0.7;
+}
+.hub-title {
+  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+.hub-title em { color: var(--gold); font-style: italic; }
+.hub-subtitle { opacity: 0.5; font-size: 0.82rem; }
+
+/* Grid */
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Zone card */
+.hub-card {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  min-height: 200px;
+  animation: fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) var(--delay, 0s) both;
+}
+
+.hub-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  transition: transform 0.6s ease;
+}
+.hub-card:hover .hub-card-bg {
+  transform: scale(1.12);
+}
+
+.hub-card-overlay {
+  position: absolute;
+  inset: 0;
+  transition: background 0.4s ease;
+}
+.hub-card:hover .hub-card-overlay {
+  background: linear-gradient(135deg, rgba(5,5,8,0.7) 0%, rgba(5,5,8,0.2) 100%) !important;
+}
+
+.hub-card-accent-line {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.hub-card:hover .hub-card-accent-line { opacity: 1; }
+
+.hub-card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+}
+
+.hub-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.hub-card-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.hub-card-stat-wrap {
+  text-align: right;
+}
+.hub-card-stat {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.hub-card-stat-label {
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  color: rgba(216,216,216,0.5);
+}
+
+.hub-card-bottom {}
+.hub-card-title {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+.hub-card-desc {
+  font-size: 0.72rem;
+  color: rgba(216,216,216,0.55);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  max-width: 200px;
+}
+.hub-card-cta {
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: all 0.3s ease;
+  display: block;
+}
+.hub-card:hover .hub-card-cta {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hub-card-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+  pointer-events: none;
+  border-radius: 2px;
+}
+.hub-card:hover .hub-card-border {
+  border-color: var(--accent, rgba(201,168,76,0.3));
+}
+
+/* Footer */
+.hub-footer {
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 0.8s 0.5s ease both;
+}
+
+@media (max-width: 1100px) {
+  .hub-grid { grid-template-columns: repeat(2, 1fr); }
+  .hub-root { padding: 1.5rem 2rem 1rem; }
+}
